@@ -1,23 +1,3 @@
-/*import { UserButton } from '@clerk/nextjs';
-import React from 'react';
-
-function Header() {
-  return (
-    <header>
-      <div className="container mx-2 my-1 border-b-[2px] border-gr">
-        <div>
-            <UserButton/>
-        </div>
-        <div className="text-3xl font-bold">
-          Ambulance Seva
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default Header;*/
-
 import { UserButton } from '@clerk/nextjs';
 import React from 'react';
 

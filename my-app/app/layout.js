@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
     </ClerkProvider>
   );
 }*/
-//app/page.js
+
 import { ClerkProvider, SignIn, SignedIn, SignedOut } from '@clerk/nextjs';
 import './globals.css';
 import Header from '@/components/Header';
@@ -46,6 +46,7 @@ export default function RootLayout({ children }) {
     </ClerkProvider>
   );
 }
+
 
 
 
