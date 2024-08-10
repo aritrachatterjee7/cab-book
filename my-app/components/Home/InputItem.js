@@ -40,7 +40,7 @@ const InputItem = ({ type }) => {
   return (
     <div className="bg-slate-200 p-3 rounded-lg mt-3">
       <GooglePlacesAutocomplete
-        apiKey={process.env.NEXT_PUBLIC_GOOGLE_API_KEY}
+        
         selectProps={{
           value,
           onChange: (place) => {
