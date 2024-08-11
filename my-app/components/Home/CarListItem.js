@@ -19,7 +19,7 @@ const CarListItem = ({ car, distance  }) => {
             <h2 className='font-semibold text-[18px]'>
               {car.name}
             </h2>
-            <p>{car.desc}</p>
+            <p classname='p-5'>{car.desc}</p>
           </div>
         </div>
         <h2 className='text-[18px] font-semibold'>

@@ -1,18 +1,26 @@
 export const CarListData=[
     {
-        id : 1,
-        name: 'Ambulance x',
+        id: 1,
+        name: 'Ambulance',
         seat: 4,
-        desc: 'Affordable',
-        amount: 1.1,
+        desc: 'Basic ambulance service without nurse',
+        amount: 20,
         image: '/ambulance.png'
     },
     {
-        id : 2,
-        name: 'Ambulance x',
+        id: 2,
+        name: 'Ambulance',
         seat: 4,
-        desc: 'Affordable',
-        amount: 1.1,
+        desc: 'Advanced ambulance service with nurse and medical assistance',
+        amount: 30,
+        image: '/ambulance.png'
+    },
+    {
+        id: 3,
+        name: 'Ambulance',
+        seat: 4,
+        desc: 'Premium ambulance service with nurse, medical assistance, and advanced life support',
+        amount: 45,
         image: '/ambulance.png'
     }
-]
+];
