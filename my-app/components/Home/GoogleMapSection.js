@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { GoogleMap, Marker, OverlayView } from '@react-google-maps/api';
+import { DirectionsRenderer, GoogleMap, Marker, OverlayView } from '@react-google-maps/api';
 import { DestinationContext } from '@/context/DestinationContext';
 import { SourceContext } from '@/context/SourceContext';
 
@@ -18,6 +18,7 @@ const GoogleMapSection = () => {
   });
   const [zoom, setZoom] = useState(5); // Set a lower zoom level for a zoomed-out view
   const [map, setMap] = useState(null);
+  const[directionRoutePoints , setDirectionRoutePoints]= useState([]);
 
   useEffect(() => {
     if (source && source.lat && source.lng && map) {
@@ -31,6 +32,10 @@ const GoogleMapSection = () => {
       });
       setZoom(15); // Optionally zoom in when source is set
     }
+    if(source.length!=[] && destination.length!=[])
+      {
+        directionRoute()
+      }
   }, [source, map]);
 
   useEffect(() => {
@@ -45,7 +50,30 @@ const GoogleMapSection = () => {
       });
       setZoom(15); // Optionally zoom in when destination is set
     }
+    if(source.length!=[] && destination.length!=[])
+    {
+      directionRoute()
+    }
   }, [destination, map]);
+
+  const directionRoute=()=>{
+    const DirectionsService = new google.maps.DirectionsService()
+
+    DirectionsService.route({
+      origin:{lat:source.lat , lng:source.lng},
+      destination: {lat: destination.lat , lng:destination.lng},
+      travelMode:google.maps.TravelMode.DRIVING
+    },(result,status)=>{
+      if(status==google.maps.DirectionsStatus.OK)
+      {
+        setDirectionRoutePoints(result)
+      }
+      else{
+        console.error('Error')
+      }
+    }
+    )
+  }
 
   const onLoad = React.useCallback(function callback(map) {
     setMap(map);
@@ -98,7 +126,16 @@ const GoogleMapSection = () => {
         </Marker>
       )}
 
-      <></>
+      <DirectionsRenderer
+      directions={directionRoutePoints}
+      options={{
+        polylineOptions:{
+          strokeColor:'#000',
+          strokeWeight:5
+        },
+        suppressMarkers : true
+      }}
+      />
     </GoogleMap>
   );
 };
