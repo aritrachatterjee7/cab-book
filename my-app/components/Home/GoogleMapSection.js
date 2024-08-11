@@ -6,7 +6,7 @@ import { SourceContext } from '@/context/SourceContext';
 const GoogleMapSection = () => {
   const containerStyle = {
     width: '100%',
-    height: window.innerWidth * 0.5,
+    height: window.innerWidth * 0.4,
   };
 
   const { source } = useContext(SourceContext);
