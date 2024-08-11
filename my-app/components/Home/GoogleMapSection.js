@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { GoogleMap, MarkerF, OverlayViewF } from '@react-google-maps/api';
+import { GoogleMap, Marker, OverlayView } from '@react-google-maps/api';
 import { DestinationContext } from '@/context/DestinationContext';
 import { SourceContext } from '@/context/SourceContext';
 
@@ -66,34 +66,36 @@ const GoogleMapSection = () => {
     >
       {/* Source Marker and Overlay */}
       {source && source.lat && source.lng && (
-        <MarkerF position={{ lat: source.lat, lng: source.lng }}>
-          <OverlayViewF
+        <Marker position={{ lat: source.lat, lng: source.lng }}>
+          <OverlayView
             position={{ lat: source.lat, lng: source.lng }}
-            mapPaneName={OverlayViewF.OVERLAY_MOUSE_TARGET}
+            mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
-            <div className="p-2 bg-white rounded-lg shadow-lg border border-gray-200">
-              <p className="text-black text-[16px] font-semibold">
-                {source.label}
-              </p>
+            <div
+              className="p-2 bg-white font-bold inline-block rounded-md whitespace-nowrap"
+              style={{ maxWidth: 'none' }}
+            >
+              <p className="text-black text-[16px]">{source.label}</p>
             </div>
-          </OverlayViewF>
-        </MarkerF>
+          </OverlayView>
+        </Marker>
       )}
 
       {/* Destination Marker and Overlay */}
       {destination && destination.lat && destination.lng && (
-        <MarkerF position={{ lat: destination.lat, lng: destination.lng }}>
-          <OverlayViewF
+        <Marker position={{ lat: destination.lat, lng: destination.lng }}>
+          <OverlayView
             position={{ lat: destination.lat, lng: destination.lng }}
-            mapPaneName={OverlayViewF.OVERLAY_MOUSE_TARGET}
+            mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
-            <div className="p-2 bg-blue-500 rounded-lg shadow-lg border border-blue-700">
-              <p className="text-white text-[16px] font-semibold">
-                {destination.label}
-              </p>
+            <div
+              className="p-2 bg-white font-bold inline-block rounded-md whitespace-nowrap"
+              style={{ maxWidth: 'none' }}
+            >
+              <p className="text-black text-[16px]">{destination.label}</p>
             </div>
-          </OverlayViewF>
-        </MarkerF>
+          </OverlayView>
+        </Marker>
       )}
 
       <></>
