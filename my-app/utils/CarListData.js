@@ -1,4 +1,4 @@
-export const CarListData=[
+export const CarListData = [
     {
         id: 1,
         name: 'Ambulance',
@@ -9,7 +9,7 @@ export const CarListData=[
     },
     {
         id: 2,
-        name: 'Ambulance',
+        name: 'Ambulance X',
         seat: 4,
         desc: 'Advanced ambulance service with nurse and medical assistance',
         amount: 30,
@@ -17,7 +17,7 @@ export const CarListData=[
     },
     {
         id: 3,
-        name: 'Ambulance',
+        name: 'Ambulance XP',
         seat: 4,
         desc: 'Premium ambulance service with nurse, medical assistance, and advanced life support',
         amount: 45,
