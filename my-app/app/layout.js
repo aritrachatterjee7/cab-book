@@ -9,7 +9,9 @@ export default function RootLayout({ children }) {
         <body>
           <Header />
           <SignedOut>
-            <SignIn routing="hash" />
+            <div className="flex items-center justify-center min-h-screen overflow-hidden bg-gray-100">
+              <SignIn routing="hash" />
+            </div>
           </SignedOut>
           <SignedIn>
             {children} {/* Render child pages/components here */}
@@ -19,8 +21,3 @@ export default function RootLayout({ children }) {
     </ClerkProvider>
   );
 }
-
-
-
-
-
