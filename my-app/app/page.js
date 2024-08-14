@@ -1,4 +1,4 @@
-"use client"; // Ensure this is used if your setup requires it
+"use client"; 
 
 import GoogleMapSection from "@/components/Home/GoogleMapSection";
 import SearchSection from "@/components/Home/SearchSection";
@@ -8,7 +8,6 @@ import { LoadScript } from "@react-google-maps/api";
 import { useState } from "react";
 
 export default function Home() {
-  // State to manage source and destination
   const [source, setSource] = useState([]);
   const [destination, setDestination] = useState([]);
 
